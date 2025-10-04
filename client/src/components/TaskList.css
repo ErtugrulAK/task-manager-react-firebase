@@ -1,0 +1,35 @@
+.task-list-container {
+  margin-top: 2rem;
+}
+
+.filter-buttons {
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.filter-buttons button {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--surface-color);
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.filter-buttons button:hover {
+  background-color: #f1f1f1;
+}
+
+.filter-buttons button.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.task-list {
+  /* No background color needed, items have their own */
+  min-height: 100px;
+}

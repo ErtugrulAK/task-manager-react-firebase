@@ -1,0 +1,54 @@
+.App {
+  max-width: 700px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+.task-manager-container {
+  background-color: var(--surface-color);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.App-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+}
+
+.App-header h1 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 1.75rem;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-email {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.logout-button {
+  background-color: var(--text-secondary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.logout-button:hover {
+  background-color: var(--text-primary);
+}

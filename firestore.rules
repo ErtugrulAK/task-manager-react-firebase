@@ -1,0 +1,22 @@
+// These rules are not restrictive enough for production apps.
+// Make sure to restrict access to your database as needed.
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // The tasks collection
+    match /tasks/{taskId} {
+      // A user can read a task document if they are the owner of that document.
+      // The `request.auth.uid` is the unique ID of the logged-in user.
+      // The `resource.data.userId` is the field where we will store the owner's ID in the document.
+      allow read: if request.auth.uid == resource.data.userId;
+
+      // A user can create a task if they are logged in and the new task's
+      // userId field matches their own user ID. This prevents a user
+      // from creating tasks on behalf of someone else.
+      allow create: if request.auth.uid == request.resource.data.userId;
+
+      // A user can update or delete a task if they are the owner of that document.
+      allow update, delete: if request.auth.uid == resource.data.userId;
+    }
+  }
+}

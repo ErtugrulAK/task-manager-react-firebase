@@ -1,0 +1,20 @@
+Sadece Frontend Güncellemesi İçin:
+
+cd client
+npm run build
+cd ..
+firebase deploy --only hosting
+
+
+Sadece Backend Güncellemesi İçin:
+(Ana task-manager-pro klasöründeyken çalıştır)
+
+firebase deploy --only functions
+
+
+Her Şeyi Kapsayan Tam Güncelleme İçin:
+
+cd client
+npm run build
+cd ..
+firebase deploy
